@@ -19,6 +19,7 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+#暴力解法
         res = dict()
         for i in range(0,len(numbers)):
             sub = target - numbers[i]
