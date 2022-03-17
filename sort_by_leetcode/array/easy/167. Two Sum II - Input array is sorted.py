@@ -19,7 +19,19 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-#暴力解法
+#暴力解法是n^2的复杂度，这里无非是偷懒了，把第二层循环替换成找dictonary的key
+#难点就在于dictionary的value是不能直接查找的，但我们把数值存在key里面就可以直接查找
+"""
+其实这个答案的写法已经很花哨了，最质朴的写法是：
+        res = dict()
+        for i in range(0,len(numbers)):
+            res[numbers[i]] = i
+        for i in range(0,len(numbers)):
+            sub = target - numbers[i]
+            if sub in res.keys():
+                return [res[sub]+1,i+1]
+给出的最优解无非是把两个相似的循环结合在一起，又省了一些iteration，不过复杂度of the same magnitude
+"""              
         res = dict()
         for i in range(0,len(numbers)):
             sub = target - numbers[i]
