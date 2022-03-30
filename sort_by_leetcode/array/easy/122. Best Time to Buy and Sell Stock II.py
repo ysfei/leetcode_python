@@ -6,6 +6,7 @@ Design an algorithm to find the maximum profit. You may complete as many transac
 
 """
 """这道题比较简单，因为没有买卖次数限制，也没有买卖时间限制，如果后面的股价比前面的大，我们就买卖"""
+"""主要学习连加的快捷写法：sum(some_function_of_i for i in ...)"""
 class Solution(object):
     def maxProfit(self, prices):
         """
