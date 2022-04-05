@@ -11,8 +11,8 @@ Subscribe to see which companies asked this question.
 
 """
 
-"""
-暴力解法(n^2)：
+
+#暴力解法(n^2)：
 class Solution(object):
     def majorityElement(self, nums):
         majority_count = len(nums)//2
@@ -20,16 +20,16 @@ class Solution(object):
             count = sum(1 for elem in nums if elem == num)
             if count > majority_count:
                 return num
-这里可以学习对list里出现某个值的计数方法：count = sum(1 for i in nums if i==target)
-但这个解法暴力在sum(1 for ...)本身也是循环，所以复杂度是n^2.
+#这里可以学习对list里出现某个值的计数方法：count = sum(1 for i in nums if i==target)
+#但这个解法暴力在sum(1 for ...)本身也是循环，所以复杂度是n^2.
 
-巧思路（NlogN)
+#巧思路（NlogN)
 class Solution:
     def majorityElement(self, nums):
         nums.sort()
         return nums[len(nums)//2]
         #或者直接一行：return sorted(nums)[len(nums)//2]
-缺点是sort的时间复杂度是NlogN
+#缺点是sort的时间复杂度是NlogN
 
 Hash table解法(n):
 from collections import Counter
