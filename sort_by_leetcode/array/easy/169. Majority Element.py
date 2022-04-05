@@ -15,7 +15,7 @@ Subscribe to see which companies asked this question.
 """
 
 """
-暴力解法：
+暴力解法(n^2)：
 class Solution(object):
     def majorityElement(self, nums):
         majority_count = len(nums)//2
@@ -25,6 +25,15 @@ class Solution(object):
                 return num
 这里可以学习对list里出现某个值的计数方法：count = sum(1 for i in nums if i==target)
 但这个解法暴力在sum(1 for ...)本身也是循环，所以复杂度是n^2.
+
+Hash table解法(n):
+from collections import Counter
+class Solution:
+    def majorityElement(self, nums):
+        counts = Counter(nums)
+        return max(counts.keys(), key=counts.get)
+这里import了Counter函数，直接生成各个值的频度表，format是dictionary (Hash table)
+max函数。。。
                 
 class Solution(object):
     def majorityElement(self, nums):
