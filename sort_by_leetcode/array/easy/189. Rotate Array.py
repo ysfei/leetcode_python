@@ -19,7 +19,8 @@ Subscribe to see which companies asked this question.
 """
 """直接拼接数组即可"""
 
-
+#就是左边变成n-k+1到n，右边变成1到n-k. 注意slicing是左开右闭，所以写成nums[n-k:n]和nums[0:n-k].而0和n是起始index所以可以省略
+#不知道为什么LHS写成nums[:]，直接用nums就可以了，别忘了还要写return nums
 class Solution(object):
     def rotate(self, nums, k):
         """
