@@ -18,6 +18,7 @@ Subscribe to see which companies asked this question.
 """类似于26题的思路，要点是要把不等于目标值的元素放到数组前面
 时间复杂度O（n）
 """
+#again, 之所以可以不用管i，直接替换index对应的值是因为：index <= i总是成立，所以改变nums[index]不影响下一轮对nums[i+1]的比较
 class Solution(object):
     def removeElement(self, nums, val):
         """
@@ -29,6 +30,8 @@ class Solution(object):
         for i in range(len(nums)):
             if nums[i] != val:
                 nums[index] = nums[i]
+                index += 1
+        return index
 
 
 
