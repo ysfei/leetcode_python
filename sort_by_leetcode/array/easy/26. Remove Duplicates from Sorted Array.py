@@ -14,7 +14,11 @@ Subscribe to see which companies asked this question.
 """
 
 """题目要点：返回不重复数的个数，同时要排在数组的前面n个"""
-
+#loop over i in range(len(nums))
+#如果num[i]和第一个num相同就跳过，如果不同就留下replace第二个num (index=1, replacenums[1])，进入下一个i; 
+#...
+#如果num[i]和上一个num相同就跳过，如果不同就留下replace上一个num的后面那一个 (index=index+1并replace nums[index])，进入下一个i;
+#因为i的增速>=index的增速，所以replace nums[index]不会影响之后对nums[i]的比较
 class Solution(object):
     def removeDuplicates(self, nums):
         """
