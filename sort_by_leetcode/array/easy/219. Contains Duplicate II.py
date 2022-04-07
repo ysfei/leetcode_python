@@ -4,6 +4,11 @@ Given an array of integers and an integer k, find out whether there are two dist
 
 """
 """仍然用dict保存数组元素出现的位置，两种情况下更新"""
+#和217一样，无非在判断num in dic时多加一个条件：index - dic[num] <= k
+#for i in nums: 返回list values
+#for i in dic: 返回dictionary keys, 相当于for i in dic.keys()
+#for i in dic.values(): 返回dictionary values
+#for i,value in dic.items(): 返回dictionary的 (key,value) pair
 class Solution(object):
     def containsNearbyDuplicate(self, nums, k):
         """
@@ -12,7 +17,7 @@ class Solution(object):
         :rtype: bool
         """
         dic = dict()
-        for index,value in enumerate(nums):
+        for index,value in enumerate(nums): 
             if value in dic and index - dic[value] <= k:
                 return True
             dic[value] = index
